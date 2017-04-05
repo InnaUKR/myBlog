@@ -7,6 +7,16 @@ class CategoriesController < ApplicationController
   end
 
   def new
+  	@category =Category.new
+  end
+
+  def update
+  	@category =Category.find(params[:id])
+  	if(@category.update_attributes(category_params))
+  		redirect_to categories_path, :notice=>"New category has added"
+  	else
+  		render "new"
+  	end  			
   end
 
   def show

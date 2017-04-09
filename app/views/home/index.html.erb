@@ -1,2 +1,11 @@
-<h1>MyRubyBlog</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if @result.each do |post| %>
+	<div class="post">
+		<h3 class="title"><%=link_to post.title, posts_show_path(id:post.id)%></h3>
+		<div class="entry"><%= post.body %></div>
+		<div class="byline">
+			<p class="meta"><%= post.created_at.strftime("%b %d, %Y")%></small>
+		</div>
+	</div>
+<% end.empty? %>
+<p>Empty</p>
+<% end %>

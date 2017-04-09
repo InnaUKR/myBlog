@@ -1,9 +1,10 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
 <% @posts.each do |post| %>
-<h3><%=link_to post.title, posts_show_path(id:post.id)%></h3>
-<p><%= post.body %></p>
-<small><%= post.created_at.strftime("%b %d, %Y")%></small>
-<hr>
+	<div class="post">
+		<h3 class="title"><%=link_to post.title, posts_show_path(id:post.id)%></h3>
+		<div class="entry"><%= post.body %></div>
+		<div class="byline">
+			<p class="meta"><%= post.created_at.strftime("%b %d, %Y")%></small>
+		</div>
+	</div>
 <% end %>
-<%=link_to "Create", posts_new_path()%>
+<!--<%=link_to "Create", posts_new_path()%>

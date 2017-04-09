@@ -1,17 +1,18 @@
 <%= render "partials/head" %>
+
 <body>
 
 <div id="page">
 	<div id="page-bgtop">
-		<div id="content">
-			<%= yield %>	
-			</div>
-		</div>	
-	</div>
-</div>
-			<div id="sidebur">
+						<div >
 				<ul>
 						<%= render "partials/categories" %>
 				</ul>
+			</div>
+		<div id="content">
+			<%= yield %>	
+		</div>	
+	</div>
+</div>
 </body>
 </html>

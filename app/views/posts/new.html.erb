@@ -10,7 +10,7 @@
 	<%= f.text_area :body %> 
 </p>
 <p>
-	<%= f.select :category_id, @categories.collect{|c| [c.name, c.id]},{:include_blank=>"Select one"} %>
+	<%= f.select :category_id, @categories.collect{|c| [c.name, c.id]}%>
 </p>
 <p>
 	<%= f.submit "Submit" %>

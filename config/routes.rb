@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :coments
+
   get 'pages/about'
 
   get 'pages/contact'

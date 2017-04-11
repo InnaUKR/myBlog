@@ -5,4 +5,28 @@
 	<p><%=link_to "Delete", @post,:confirm=>"Are you sure you wont to delete? ", method: :delete%>|
 	<%=link_to "Edit", edit_post_path(@post)%>
 	</p>
+
+<h3> Comments</h3>
+	<%= form_for @coments do |f| %>
+	<p>
+		<%= f.hidden_field :post_id %>
+	</p>
+	<p>
+	<%= f.label :name, "Name" %>
+	<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :email, "Email" %>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :body, "Body" %>
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<%= f.submit "Post Comment" %>
+	</p>
+	<% end %>	
+	<%= render :partial => "partials/coment", :collection =>@post.coments %>
 </div>
